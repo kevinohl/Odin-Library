@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
-    <div class="container">
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <h1>Library</h1>
+    <div class="table-container">
+      <table id="book-table">
+        <!-- <caption>
+          Books
+        </caption> -->
+        <colgroup>
+          <col />
+          <col />
+          <col /> 
+          <col /> 
+        </colgroup>
+        <tr class="table-header">
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col" id="page-col">Pages</th>
+          <th scope="col">Read?</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </table>
     </div>
-</body>
+    <button id="add-button">Add Book</button>
+  </body>
 </html>
