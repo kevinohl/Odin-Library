@@ -1,36 +1,40 @@
 * {
-    --highlight-color: #dbb2ff;
-    --accent-color: #332940;
+  --highlight-color: #dbb2ff;
+  --accent-color: #332940;
+  --bg-color: #121212;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #121212;
-    color: var(--highlight-color);
+body, .main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--highlight-color);
+  height: 100vh;
+  width: 100vw;
 }
 
 #book-table {
-    text-align: left;
-    width: max(400px, 50vw);
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
+  text-align: left;
+  width: max(400px, 50vw);
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
 }
 
 #book-table .table-header {
-    background-color: var(--accent-color);
-    font-size: 16px;
+  background-color: var(--accent-color);
+  font-size: 16px;
 }
 
-#book-table td, #book-table th {
-    padding: 10px 10px;
+#book-table td,
+#book-table th {
+  padding: 10px 10px;
 }
 
 #book-table td {
-    background-color: rgb(33, 33, 33);
+  background-color: rgb(33, 33, 33);
 }
 
 /* #book-table td:nth-child(3) {
@@ -38,43 +42,87 @@ body {
 } */
 
 th:first-of-type {
-    border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 th:last-of-type {
-    border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 tr:last-of-type td:last-of-type {
-    border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 tr:last-of-type td:first-of-type {
-    border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-button {
-    border: 0px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border-color: initial;
-    text-decoration-color: initial;
-    background-color: var(--accent-color);
-    color: var(--highlight-color);
+button,
+input[type="submit"] {
+  border: 0px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: initial;
+  text-decoration-color: initial;
+  background-color: var(--accent-color);
+  color: var(--highlight-color);
 }
 
-button:hover {
-    color: var(--accent-color);
-    background-color: var(--highlight-color);
+button:hover,
+input[type="submit"]:hover {
+  color: var(--accent-color);
+  background-color: var(--highlight-color);
 }
 
-button:active {
-    box-shadow: 0 1px #666;
-    transform: translateY(1px);
+button:active,
+input[type="submit"]:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
 }
 
 #add-button {
-    font-weight: bold;
-    font-size: 18px;
-    padding: 5px 15px;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 15px;
+}
+
+.form-container {
+  background-color: rgb(33, 33, 33);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  transform: translatey(25vh);
+
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.form-container h3 {
+  margin: 5px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form > input {
+  border-radius: 5px;
+  padding: 0 10px;
+  background-color: var(--bg-color);
+  color: var(--highlight-color);
+}
+
+form > * {
+  margin: 5px 10px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.darkened {
+    filter: brightness(30%);
 }

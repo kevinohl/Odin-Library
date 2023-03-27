@@ -9,28 +9,44 @@
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <h1>Library</h1>
-    <div class="table-container">
-      <table id="book-table">
-        <!-- <caption>
-          Books
-        </caption> -->
-        <colgroup>
-          <col />
-          <col />
-          <col /> 
-          <col /> 
-        </colgroup>
-        <tr class="table-header">
-          <th scope="col">Title</th>
-          <th scope="col">Author</th>
-          <th scope="col" id="page-col">Pages</th>
-          <th scope="col">Read?</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </table>
+    <div class="main-container">
+        <h1>Library</h1>
+        <button id="add-button">Add Book</button>
+        <div class="table-container">
+          <table id="book-table">
+            <!-- <caption>
+              Books
+            </caption> -->
+            <colgroup>
+              <col />
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <tr class="table-header">
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col" id="page-col">Pages</th>
+              <th scope="col">Read?</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </table>
+        </div>
     </div>
-    <button id="add-button">Add Book</button>
+
+    <div class="form-container hidden">
+        <h3>Add book</h3>
+        <form action="" method="post" id="book-form">
+            <input type="text" id="title" name="title" placeholder="Title" required>
+            <input type="text" id="author" name="author" placeholder="Author" required>
+            <input type="number" id="pages" name="pages" placeholder="Number of pages" required>
+            <div>
+                <label for="read">Already read?</label>
+                <input type="checkbox" id="read" name="read">
+            </div>
+            <input type="submit" name="submit" id="book-submit">
+          </form>
+    </div>
   </body>
 </html>
