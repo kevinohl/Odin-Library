@@ -4,16 +4,18 @@ const table = document.querySelector("#book-table");
 const addButton = document.querySelector("#add-button");
 const submitButton = document.querySelector("#book-submit");
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = function () {
-    return `${title} by ${author}, ${pages} pages, ${
-      read ? "already read." : "not read yet."
-    }`;
-  };
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.info = function () {
+      return `${title} by ${author}, ${pages} pages, ${
+        read ? "already read." : "not read yet."
+      }`;
+    };
+  }
 }
 
 const book1 = new Book("titleee", "not me", "420", false);
