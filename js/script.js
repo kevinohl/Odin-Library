@@ -10,13 +10,16 @@ class Book {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function () {
-      return `${title} by ${author}, ${pages} pages, ${
-        read ? "already read." : "not read yet."
+  }
+
+  info() {
+      return `${this.title} by ${this.author}, ${this.pages} pages, ${
+        this.read ? "already read." : "not read yet."
       }`;
     };
   }
-}
+
+
 
 const book1 = new Book("titleee", "not me", "420", false);
 const book2 = new Book("titleex", "also not me", "69", true);
