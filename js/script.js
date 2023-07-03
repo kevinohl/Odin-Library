@@ -13,13 +13,11 @@ class Book {
   }
 
   info() {
-      return `${this.title} by ${this.author}, ${this.pages} pages, ${
-        this.read ? "already read." : "not read yet."
-      }`;
-    };
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${
+      this.read ? "already read." : "not read yet."
+    }`;
   }
-
-
+}
 
 const book1 = new Book("titleee", "not me", "420", false);
 const book2 = new Book("titleex", "also not me", "69", true);
@@ -70,6 +68,8 @@ function renderLibrary() {
 function toggleForm() {
   const form = document.querySelector(".form-container");
   const background = document.querySelector(".main-container");
+  const errorSpan = document.getElementById("error-span");
+  errorSpan.innerHTML = "";
   form.classList.toggle("hidden");
   background.classList.toggle("darkened");
   if (!form.classList.contains("hidden")) {
@@ -85,10 +85,15 @@ addButton.addEventListener("click", (e) => {
 function submitBook(event) {
   event.preventDefault();
   const bookForm = document.getElementById("book-form");
+  const errorSpan = document.getElementById("error-span");
+  errorSpan.innerHTML = "";
   const bookTitle = document.getElementById("title").value;
   const bookAuthor = document.getElementById("author").value;
   const bookPages = document.getElementById("pages").value;
   const bookRead = document.getElementById("read").checked;
+  if ((bookPages === "") || (bookAuthor === "" ) || (bookTitle === "")) {
+    errorSpan.innerHTML = "Fields cannot be empty!";
+  }
   if (bookTitle && bookAuthor && bookPages) {
     toggleForm();
     const newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);

@@ -37,7 +37,7 @@
 
     <div class="form-container hidden">
         <h3>Add book</h3>
-        <form action="" method="post" id="book-form">
+        <form action="" method="post" id="book-form" novalidate>
             <input type="text" id="title" name="title" placeholder="Title" required>
             <input type="text" id="author" name="author" placeholder="Author" required>
             <input type="number" id="pages" name="pages" placeholder="Number of pages" required>
@@ -47,6 +47,7 @@
             </div>
             <input type="submit" name="submit" id="book-submit">
           </form>
+          <span class="error" id="error-span" aria-live="polite"></span>
     </div>
   </body>
 </html>

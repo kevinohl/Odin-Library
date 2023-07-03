@@ -126,3 +126,7 @@ form > * {
 .darkened {
     filter: brightness(30%);
 }
+
+#error-span {
+  color: red;
+}
